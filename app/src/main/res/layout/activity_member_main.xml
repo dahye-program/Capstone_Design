@@ -15,19 +15,28 @@
         android:layout_marginTop="10dp"
         />
     <Button
-        android:id="@+id/mainLoginBtn"
+        android:id="@+id/runCameraBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="로그인"
+        android:text="카메라 실행"
         android:textSize="30dp"
         android:layout_marginTop="30dp"
         android:layout_gravity="center"
         />
     <Button
-        android:id="@+id/mainSignupBtn"
+        android:id="@+id/showMyRecordBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="회원가입"
+        android:text="내가 쓴 방명록 보기"
+        android:textSize="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center"
+        />
+    <Button
+        android:id="@+id/showLocalBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="여행지 둘러보기"
         android:textSize="30dp"
         android:layout_marginTop="30dp"
         android:layout_gravity="center"

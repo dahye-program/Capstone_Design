@@ -23,7 +23,7 @@ public class memberLogin extends AppCompatActivity {
         loginCheckButton.setOnClickListener(new View.OnClickListener() { //확인 버튼 눌렀을 때
             @Override
             public void onClick(View view) {
-
+                // 회원 메인으로 이동
             }
         });
     }
