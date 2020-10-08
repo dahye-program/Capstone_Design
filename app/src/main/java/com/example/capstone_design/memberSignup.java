@@ -61,7 +61,12 @@ public class memberSignup extends AppCompatActivity {
         signUpCheckButton.setOnClickListener(new View.OnClickListener() { //확인 버튼 눌렀을 때
             @Override
             public void onClick(View view) {
-
+                //HttpConnectThread http = new HttpConnectThread(
+                     //   "http://192.168.0.104:80/insert.php",
+                   //     "&status=" + member_status + "&name=" + user_name_text +
+                 //               "&number=" + user_number_text);
+                //http.start();
+                //String temp = http.GetResult();
             }
         });
     }

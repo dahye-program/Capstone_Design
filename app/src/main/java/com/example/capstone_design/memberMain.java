@@ -3,6 +3,7 @@ package com.example.capstone_design;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 
 public class memberMain extends AppCompatActivity {
@@ -17,5 +18,26 @@ public class memberMain extends AppCompatActivity {
         runARCameraButton = (Button)findViewById(R.id.runCameraBtn);
         showMyrecordButton = (Button)findViewById(R.id.showMyRecordBtn);
         showLocalButton = (Button)findViewById(R.id.showMyRecordBtn);
+
+        runARCameraButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
+        showMyrecordButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
+        showLocalButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
     }
 }
