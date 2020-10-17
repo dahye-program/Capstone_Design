@@ -94,16 +94,22 @@ public class memberSignup extends AppCompatActivity {
         signUpCheckButton.setOnClickListener(new View.OnClickListener() { //확인 버튼 눌렀을 때
             @Override
             public void onClick(View view) {
-                // 회원 메인으로 이동
-                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(intent);
                 HttpConnectThread http = new HttpConnectThread(
-                        "http://192.168.0.104:80/insertinfo.php",
+                        "http://192.168.0.104:80/memberSignUp_Android.php",
                         "&username=" + signupNameEditText +
                                 "&id=" + signupIDEditText + "&pw=" + signupPWEditText +
                                 "&phone=" + signupPhoneEditText + "&age=" + checkAge + "sex=" + checkSex);
                 http.start();
                 String temp = http.GetResult();
+                if(temp.equals("New record create successfully")){ // 로그인 성공 시
+                    Toast.makeText(memberSignup.this, "회원가입 성공",Toast.LENGTH_SHORT).show();
+                    // 메인으로 이동
+                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                    startActivity(intent);
+                }
+                else{
+                    Toast.makeText(memberSignup.this, "회원가입 실패",Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }

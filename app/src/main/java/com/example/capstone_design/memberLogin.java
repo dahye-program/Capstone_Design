@@ -29,12 +29,12 @@ public class memberLogin extends AppCompatActivity {
                     Toast.makeText(memberLogin.this, "입력 제대로 하세요!!", Toast.LENGTH_SHORT).show();
                 } else {
                     HttpConnectThread http = new HttpConnectThread(
-                            "http://192.168.0.101:80/login.php",
+                            "http://192.168.0.101:80/memberLogin_Android.php",
                             "&id=" + loginIDEditText +
                                     "&pw=" + loginPWEditText);
                     http.start();
                     String temp = http.GetResult();
-                    if(temp.equals("")){ // TODO : 로그인 성공 조건 걸기
+                    if(temp.equals("Login Successfully")){ // 로그인 성공 시
                         Toast.makeText(memberLogin.this, "로그인 성공",Toast.LENGTH_SHORT).show();
                         // 회원 메인으로 이동
                         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
