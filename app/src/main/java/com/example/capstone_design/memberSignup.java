@@ -17,6 +17,10 @@ public class memberSignup extends AppCompatActivity {
     EditText signupIDEditText; //가입자 아이디
     EditText signupPWEditText; //가입자 비밀번호
     EditText signupPhoneEditText; //가입자 전화번호
+    String nameValue;
+    String idValue;
+    String pwValue;
+    String phoneValue;
 
     // 나이 선택 라디오그룹버튼
     RadioButton ageTeenageButton;
@@ -43,6 +47,11 @@ public class memberSignup extends AppCompatActivity {
         signupIDEditText = (EditText) findViewById(R.id.signupIDedittext); //아이디 받아오기
         signupPWEditText = (EditText) findViewById(R.id.signupPWedittext); //비밀번호 받아오기
         signupPhoneEditText = (EditText) findViewById(R.id.signupPhoneedittext);  //전화번호 받아오기
+        //string 형으로 변환
+        nameValue = signupNameEditText.getText().toString();
+        idValue = signupIDEditText.getText().toString();
+        pwValue = signupPWEditText.getText().toString();
+        phoneValue = signupPhoneEditText.getText().toString();
 
         //나이 라디오 버튼 설정
         ageTeenageButton = (RadioButton) findViewById(R.id.teenageRadioBtn);
@@ -96,9 +105,9 @@ public class memberSignup extends AppCompatActivity {
             public void onClick(View view) {
                 HttpConnectThread http = new HttpConnectThread(
                         "http://192.168.0.104:80/memberSignUp_Android.php",
-                        "&username=" + signupNameEditText +
-                                "&id=" + signupIDEditText + "&pw=" + signupPWEditText +
-                                "&phone=" + signupPhoneEditText + "&age=" + checkAge + "sex=" + checkSex);
+                        "&username=" + nameValue +
+                                "&id=" + idValue + "&pw=" + pwValue +
+                                "&phone=" + phoneValue + "&age=" + checkAge + "sex=" + checkSex);
                 http.start();
                 String temp = http.GetResult();
                 if(temp.equals("New record create successfully")){ // 로그인 성공 시

@@ -22,7 +22,7 @@ public class memberMain extends AppCompatActivity {
         runARCameraButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //유니티 실행
+                //TODO: 유니티 import해서 실행
             }
         });
 
